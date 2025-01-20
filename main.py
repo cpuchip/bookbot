@@ -1,3 +1,5 @@
+import sys
+
 def word_count(book):
     count = book.split()
     return len(count)
@@ -36,4 +38,8 @@ def main(filename):
     print(f"--- End report ---")
 
 if __name__ == "__main__":
-    main("./books/frankenstein.txt")
+    # get a file name as the first argument
+    if len(sys.argv) < 2:
+        print("Please provide a file name")
+        exit(1)
+    main(sys.argv[1])
